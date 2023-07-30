@@ -29,11 +29,13 @@ def chat_step(prompt_address,prompt_question,prompt_request):
     else:
         return None
 
+
+
 # function to handle the "address" step of the chatbot
 def step_address(prompt_address):
     result = hp.query_database_by_address(database,prompt_address)
     if result:
-        return "Listing found:\nAddress: " + result["address"] + "\nPrice: " + result["price"] + "\nContact: " + result["contact"] + "\n\nHow can I help?"
+        return "Listing found:\nAddress: " + result["address"] + "\nPrice: " + result["price"] + "\nContact: " + result["contact"] + "\n\nGreat! To better assist you, could you please specify the date, time and duration?"
     else:
         return "Listing not found."
 
@@ -98,11 +100,11 @@ def start(prompt_address,prompt_question,prompt_request):
 # create Gradio interface for the chatbot
 gr.close_all()
 demo = gr.Interface(fn=start,
-                    inputs=[gr.Textbox(label="Address?", lines=1,placeholder="123 main st"),
-                            gr.Textbox(label="How can I help?", lines=1, placeholder="I would like to schedule a showing on July 28 at 1 PM for 30 minutes"),
+                    inputs=[gr.Textbox(label="Hello, my name is Riley. What address you would like to schedule?", lines=1,placeholder="123 main st"),
+                            gr.Textbox(label="The date, time and duration.", lines=1, placeholder="I would like to schedule a showing on July 28 at 1 PM for 30 minutes"),
                             gr.Textbox(label="Schedule it?", lines=1,placeholder="yes or no")],
                     outputs=[gr.Textbox(label="response", lines=30)],
-                    title="Showings ChatBot",
+                    title="AI Scheduling ChatBot",
                     description="A chatbot that schedules showings on properties for a real estate agent.",
                     allow_flagging="never")
 demo.launch(server_name="localhost", server_port=8888)
