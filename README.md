@@ -7,7 +7,7 @@ In this simulation, we'll put ourselves in the shoes of a real estate agent, wor
 ## Installation
 
 1. Must have Python3.
-2. Get repository
+2. Git repository
 ```bash
 git clone https://github.com/msuliot/ai-scheduling-chatbot.git
 ```
