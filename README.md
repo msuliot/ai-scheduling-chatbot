@@ -4,6 +4,9 @@ For this project, we will be using two amazing tools: OpenAI for the NLP magic, 
 
 In this simulation, we'll put ourselves in the shoes of a real estate agent, working hard to arrange a house showing for a highly valued client. 
 
+## YouTube Video Tutorial for this GitHub Repository
+[AI Scheduling ChatBot](https://youtu.be/LyNv7WYOaec)
+
 ## Installation
 
 1. Must have Python3.
